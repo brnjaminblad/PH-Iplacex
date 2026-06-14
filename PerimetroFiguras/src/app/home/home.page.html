@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      📐 Calculadora de Perímetros
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="hero">
+
+    <h1>Bienvenido</h1>
+
+    <p>
+      Seleccione una figura geométrica para calcular su perímetro.
+    </p>
+
+  </div>
+
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-title>
+        Selección de Figura
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-item>
+
+        <ion-select
+          placeholder="Seleccione una figura"
+          [(ngModel)]="figuraSeleccionada">
+
+          <ion-select-option value="circulo">
+            🔵 Círculo
+          </ion-select-option>
+
+          <ion-select-option value="triangulo">
+            🔺 Triángulo Escaleno
+          </ion-select-option>
+
+        </ion-select>
+<ion-button
+  expand="block"
+  fill="outline"
+  color="medium"
+  (click)="volverInicio()">
+
+  🏠 Volver al Inicio
+
+</ion-button>
+      </ion-item>
+
+    </ion-card-content>
+
+  </ion-card>
+
+  <app-circulo *ngIf="figuraSeleccionada === 'circulo'"></app-circulo>
+
+  <app-triangulo *ngIf="figuraSeleccionada === 'triangulo'"></app-triangulo>
+
+</ion-content>

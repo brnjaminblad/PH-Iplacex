@@ -1,0 +1,67 @@
+<ion-card class="card-figura">
+
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/3/38/RadioDiametro.svg"
+    alt="Circulo">
+
+  <p class="descripcion-imagen">
+    Representación gráfica de un círculo mostrando el radio y diámetro.
+  </p>
+
+  <ion-card-header>
+    <ion-card-title>
+      🔵 Círculo
+    </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <div class="info-card">
+
+      <h3>¿Qué es un círculo?</h3>
+
+      <p>
+        El círculo es una figura geométrica plana formada por todos los
+        puntos que se encuentran a la misma distancia de un punto central.
+      </p>
+
+      <div class="formula">
+        P = 2 × π × radio
+      </div>
+
+    </div>
+
+    <ion-item>
+      <ion-input
+        type="number"
+        label="Radio"
+        labelPlacement="floating"
+        [(ngModel)]="radio">
+      </ion-input>
+    </ion-item>
+
+    <br>
+
+    <ion-button
+      expand="block"
+      (click)="calcular()">
+
+      Calcular Perímetro
+
+    </ion-button>
+
+    <div
+      class="resultado"
+      *ngIf="mostrarResultado">
+
+      <h2>Resultado</h2>
+
+      <h1>
+        {{ resultado | number:'1.2-2' }}
+      </h1>
+
+    </div>
+
+  </ion-card-content>
+
+</ion-card>

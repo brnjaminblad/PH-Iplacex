@@ -1,0 +1,83 @@
+<ion-card class="card-figura">
+
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Triangle.Labels.svg"
+    alt="Triangulo">
+
+  <p class="descripcion-imagen">
+    Triángulo escaleno mostrando la identificación de sus lados.
+  </p>
+
+  <ion-card-header>
+    <ion-card-title>
+      🔺 Triángulo Escaleno
+    </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <div class="info-card">
+
+      <h3>¿Qué es un triángulo escaleno?</h3>
+
+      <p>
+        Es un triángulo cuyos tres lados tienen longitudes diferentes.
+      </p>
+
+      <div class="formula">
+        P = lado1 + lado2 + lado3
+      </div>
+
+    </div>
+
+    <ion-item>
+      <ion-input
+        type="number"
+        label="Lado 1"
+        labelPlacement="floating"
+        [(ngModel)]="lado1">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="number"
+        label="Lado 2"
+        labelPlacement="floating"
+        [(ngModel)]="lado2">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="number"
+        label="Lado 3"
+        labelPlacement="floating"
+        [(ngModel)]="lado3">
+      </ion-input>
+    </ion-item>
+
+    <br>
+
+    <ion-button
+      expand="block"
+      color="success"
+      (click)="calcular()">
+
+      Calcular Perímetro
+
+    </ion-button>
+
+    <div
+      class="resultado"
+      *ngIf="mostrarResultado">
+
+      <h2>Resultado</h2>
+
+      <h1>{{ resultado }}</h1>
+
+    </div>
+
+  </ion-card-content>
+
+</ion-card>
